@@ -18,7 +18,7 @@ public class plataforma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direccion * velocidad * Time.deltaTime);
+        transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
         contador-=Time.deltaTime;
         if (contador < 0)
         {
