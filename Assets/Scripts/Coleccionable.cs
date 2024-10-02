@@ -15,7 +15,6 @@ public class Coleccionable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotacion * velocidadRotacion * Time.deltaTime, 
-            Space.World);
+        transform.Rotate(rotacion * velocidadRotacion * Time.deltaTime,  Space.World);
     }
 }
