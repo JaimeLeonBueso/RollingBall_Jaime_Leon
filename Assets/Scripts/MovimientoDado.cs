@@ -11,7 +11,7 @@ public class MovimientoDado : MonoBehaviour
 
     private void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -64,23 +64,23 @@ public class MovimientoDado : MonoBehaviour
         }
         if (tipoMovimiento == 0)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad);
         } 
         else if (tipoMovimiento == 1)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad,ForceMode.Impulse);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad,ForceMode.Impulse);
         } 
         else if (tipoMovimiento == 2)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.VelocityChange);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.VelocityChange);
         } 
         else if (tipoMovimiento == 3)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.Force);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Force);
         }
         else if (tipoMovimiento == 4)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.Acceleration);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Acceleration);
         }
         }
 }
