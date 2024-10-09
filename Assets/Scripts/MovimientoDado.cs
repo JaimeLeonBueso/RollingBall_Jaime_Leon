@@ -62,27 +62,49 @@ public class MovimientoDado : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, 1, 0) * fuerzaSalto, ForceMode.Impulse);
         }
+        //if (tipoMovimiento == 0)
+        //{
+        //    rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad);
+        //} 
+        //else if (tipoMovimiento == 1)
+        //{
+        //    rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad,ForceMode.Impulse);
+        //} 
+        //else if (tipoMovimiento == 2)
+        //{
+        //    rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.VelocityChange);
+        //} 
+        //else if (tipoMovimiento == 3)
+        //{
+        //    rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Force);
+        //}
+        //else if (tipoMovimiento == 4)
+        //{
+        //    rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Acceleration);
+        //}
+        }
+    private void FixedUpdate()
+    {
+      
         if (tipoMovimiento == 0)
         {
-            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad);
-        } 
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Impulse);
+        }
         else if (tipoMovimiento == 1)
         {
-            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad,ForceMode.Impulse);
-        } 
-        else if (tipoMovimiento == 2)
-        {
             rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.VelocityChange);
-        } 
-        else if (tipoMovimiento == 3)
+        }
+        else if (tipoMovimiento == 2)
         {
             rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Force);
         }
-        else if (tipoMovimiento == 4)
+        else if (tipoMovimiento == 3)
         {
             rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Acceleration);
         }
-        }
+
+
+    }
 }
    
 
