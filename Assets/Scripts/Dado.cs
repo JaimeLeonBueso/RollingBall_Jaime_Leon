@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,6 +9,8 @@ public class Dado : MonoBehaviour
     [SerializeField] float puntos;
     [SerializeField] float vida;
     [SerializeField] Vector3 posicionInicial;
+    [SerializeField] TMP_Text puntosTexto;
+
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class Dado : MonoBehaviour
         {
             Destroy(other.gameObject);
             puntos += 10;
+            puntosTexto.SetText("Puntos: "+puntos);
         }
        
         if(other.CompareTag("Trampa"))
