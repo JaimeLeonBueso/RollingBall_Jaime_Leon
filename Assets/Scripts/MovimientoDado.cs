@@ -7,6 +7,8 @@ public class MovimientoDado : MonoBehaviour
     [SerializeField] private float velocidad;
     [SerializeField] private float fuerzaSalto;
     [SerializeField] private float tipoMovimiento;
+    [SerializeField] private Vector3 direccion;
+    [SerializeField] private float distancia;
     private Rigidbody rb;
 
     private void Start()
@@ -58,7 +60,7 @@ public class MovimientoDado : MonoBehaviour
         //    rb.AddForce(-Vector3.forward * velocidad);
 
         //}
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && RayCast())
         {
             rb.AddForce(new Vector3(0, 1, 0) * fuerzaSalto, ForceMode.Impulse);
         }
@@ -104,6 +106,12 @@ public class MovimientoDado : MonoBehaviour
         }
 
 
+    }
+    private bool RayCast()
+    {
+       bool resultadoRayCast = Physics.Raycast(transform.position, direccion, distancia);
+        Debug.DrawRay(transform.position, direccion, Color.red, distancia);
+        return resultadoRayCast;
     }
 }
    
