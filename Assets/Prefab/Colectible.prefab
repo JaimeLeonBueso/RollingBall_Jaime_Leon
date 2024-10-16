@@ -110,6 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotacion: {x: 90, y: 0, z: 0}
   velocidadRotacion: 1
+  recogerObjeto: {fileID: 8300000, guid: 618540907667e3a4489e1b448dae8c1d, type: 3}
+  audioManager: {fileID: 6929173131424803576, guid: 2f02381cbdc9c7f4abb7371b165bcc02,
+    type: 3}
 --- !u!114 &376409824283109603
 MonoBehaviour:
   m_ObjectHideFlags: 0
