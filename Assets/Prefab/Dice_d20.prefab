@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8489428893719138855}
   - component: {fileID: 9104024998280245877}
   - component: {fileID: 4715474136639215773}
-  - component: {fileID: 2057668247632843040}
   - component: {fileID: 4728901020966829621}
   m_Layer: 0
   m_Name: Dice_d20
@@ -136,18 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!75 &2057668247632843040
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780466342893252278}
-  m_Enabled: 0
-  m_Force: {x: 0, y: 0, z: 3}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &4728901020966829621
 MonoBehaviour:
   m_ObjectHideFlags: 0
