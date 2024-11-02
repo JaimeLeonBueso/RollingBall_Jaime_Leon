@@ -8,19 +8,35 @@ public class Dado : MonoBehaviour
 {
     [SerializeField] float puntos;
     [SerializeField] float vida;
+    [SerializeField] int Resultado = 1;
     [SerializeField] Vector3 posicionInicial;
     [SerializeField] TMP_Text puntosTexto;
+    [SerializeField] TMP_Text resultadoTirada;
+    [SerializeField] Transform[] carasDado;
+    [SerializeField] bool estaEnZonaTirada;
+    [SerializeField] GameObject panelExplicacionTirada;
+    [SerializeField] GameObject panelResultadoTirada;
+
+    private Rigidbody rb;
 
 
     void Start()
     {
         posicionInicial = transform.position;
+        rb = GetComponent<Rigidbody>();
     }
 
  
     void Update()
     {
-        
+       if (rb.angularVelocity.sqrMagnitude == 0 && estaEnZonaTirada )
+        {
+            panelExplicacionTirada.SetActive(false);
+            AnalizarResultado();
+            panelResultadoTirada.SetActive(true);
+            EjecutarNuevoNivel();
+            
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,12 +58,41 @@ public class Dado : MonoBehaviour
             transform.position = posicionInicial;
         }
 
+        if (other.CompareTag("Tirada"))
+        {
+           estaEnZonaTirada = true;
+            panelExplicacionTirada.SetActive(true);
 
-    } private void OnTriggerStay(Collider other)
+        }
+
+
+    } 
+    private void OnTriggerStay(Collider other)
     {
        
-    } private void OnTriggerExit(Collider other)
+    } 
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Tirada"))
+        {
+            estaEnZonaTirada = false;
+            panelResultadoTirada.SetActive(false);
+        }
+    }
+  
+    void AnalizarResultado()
+    {
+        for (int i = 0; i < carasDado.Length; i++)
+        {
+            if (carasDado[i].position.y > carasDado[Resultado-1].position.y)
+            {
+                Resultado = i + 1;
+            }
+        }
+        resultadoTirada.SetText("Has sacado un: " + Resultado + " veamos que te depara el proximo nivel.");
+    }
+    void EjecutarNuevoNivel()
+    {
+
     }
 }

@@ -8,6 +8,19 @@ TagManager:
   - Vacio
   - Trampa
   - Dado
+  - Tirada
+  - VistaFrontalC
+  - VistaCenitalFrontalC
+  - VistaFrontalD
+  - VistaFrontalI
+  - VistaCenitalFrontalD
+  - VistaCenitalFrontalI
+  - VistaCenitalTraseraD
+  - VistaCenitalTraseraI
+  - VistaCenitalTraseraC
+  - VistaTraseraC
+  - VistaTraseraD
+  - VistaTraseraI
   layers:
   - Default
   - TransparentFX

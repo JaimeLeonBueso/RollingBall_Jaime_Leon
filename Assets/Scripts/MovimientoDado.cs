@@ -6,10 +6,16 @@ public class MovimientoDado : MonoBehaviour
 {
     [SerializeField] private float velocidad;
     [SerializeField] private float fuerzaSalto;
-    [SerializeField] private float tipoMovimiento;
     [SerializeField] private Vector3 direccion;
-    [SerializeField] private float distancia;
+    [SerializeField] private float distancia; 
     private Rigidbody rb;
+    [SerializeField] private GameObject camaraCentralC;
+    [SerializeField] private GameObject camaraCentralD;
+    [SerializeField] private GameObject camaraCentralI;
+    [SerializeField] private GameObject camaraCenitalC;
+    [SerializeField] private GameObject camaraCenitalD;
+    [SerializeField] private GameObject camaraCenitalI;
+
 
     private void Start()
     {
@@ -27,25 +33,20 @@ public class MovimientoDado : MonoBehaviour
         }
     private void FixedUpdate()
     {
-      
-        if (tipoMovimiento == 0)
+        if (camaraCentralC.activeSelf || camaraCenitalC.activeSelf)
         {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.Impulse);
-        }
-        else if (tipoMovimiento == 1)
-        {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.VelocityChange);
-        }
-        else if (tipoMovimiento == 2)
-        {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.Force);
-        }
-        else if (tipoMovimiento == 3)
-        {
-            rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * velocidad, ForceMode.Acceleration);
+            rb.AddForce(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * velocidad, ForceMode.Force);
         }
 
-
+        else if (camaraCentralD.activeSelf || camaraCenitalD.activeSelf)
+        {
+            rb.AddForce(new Vector3((Input.GetAxisRaw("Vertical")), 0, -1* (Input.GetAxisRaw("Horizontal"))).normalized * velocidad, ForceMode.Force);
+        }
+        
+        else if (camaraCentralI.activeSelf || camaraCenitalI.activeSelf)
+        {
+            rb.AddForce(new Vector3(-1 * (Input.GetAxisRaw("Vertical")), 0,(Input.GetAxisRaw("Horizontal"))).normalized * velocidad, ForceMode.Force);
+        }
     }
     private bool RayCast()
     {
