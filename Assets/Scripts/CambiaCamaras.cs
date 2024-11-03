@@ -16,200 +16,143 @@ public class CambiaCamaras : MonoBehaviour
     [SerializeField] private GameObject cenitalTraseraC;
     [SerializeField] private GameObject cenitalTraseraD;
     [SerializeField] private GameObject cenitalTraseraI;
+    [SerializeField] private GameObject estaticaD;
+    [SerializeField] private GameObject estaticaI;
+    [SerializeField] private GameObject estaticaDelante;
+    [SerializeField] private GameObject estaticaDetras;
+    [SerializeField] private GameObject camaraActiva;
+  
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.CompareTag("VistaFrontalC"))
         {
-            frontalC.SetActive(true);
-           frontalD.SetActive(false);
-           frontalI.SetActive(false);
-           traseraC.SetActive(false);
-           traseraD.SetActive(false);
-           traseraI.SetActive(false);
-           cenitalFrontalC.SetActive(false);
-           cenitalFrontalD.SetActive(false);
-           cenitalFrontalI.SetActive(false);
-           cenitalTraseraC.SetActive(false);
-           cenitalTraseraD.SetActive(false);
-           cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = frontalC;
+            camaraActiva.SetActive(true);
         }
 
         else if (other.CompareTag("VistaFrontalD"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = frontalD;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaFrontalI"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = frontalI;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaTraseraC"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = traseraC;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaTraseraD"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = traseraD;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaTraseraI"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = traseraI;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalFrontalC"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalFrontalC;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalFrontalD"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalFrontalD;
+            camaraActiva.SetActive(true);
         }
+
         else if (other.CompareTag("VistaCenitalFrontalI"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalFrontalI;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalTraseraC"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalTraseraC;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalTraseraD"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalTraseraD;
+            camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalTraseraI"))
         {
-            frontalC.SetActive(true);
-            frontalD.SetActive(false);
-            frontalI.SetActive(false);
-            traseraC.SetActive(false);
-            traseraD.SetActive(false);
-            traseraI.SetActive(false);
-            cenitalFrontalC.SetActive(false);
-            cenitalFrontalD.SetActive(false);
-            cenitalFrontalI.SetActive(false);
-            cenitalTraseraC.SetActive(false);
-            cenitalTraseraD.SetActive(false);
-            cenitalTraseraI.SetActive(false);
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = cenitalTraseraI;
+            camaraActiva.SetActive(true);
+        } 
+        
+        else if (other.CompareTag("VistaEstaticaD"))
+        {
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estaticaD;
+            camaraActiva.SetActive(true);
+        }  
+        
+        else if (other.CompareTag("VistaEstaticaI"))
+        {
+     
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estaticaI;
+            camaraActiva.SetActive(true);
+        } 
+        
+        else if (other.CompareTag("VistaEstaticaDelante"))
+        {
+ 
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estaticaDelante;
+            camaraActiva.SetActive(true);
+        }  
+        
+        else if (other.CompareTag("VistaEstaticaDetras"))
+        {
+  
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estaticaDetras;
+            camaraActiva.SetActive(true);
         }
        
     }

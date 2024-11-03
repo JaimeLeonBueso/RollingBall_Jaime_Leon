@@ -21,6 +21,14 @@ TagManager:
   - VistaTraseraC
   - VistaTraseraD
   - VistaTraseraI
+  - VistaCentro_C
+  - VistaEstaticaD
+  - VistaEstaticaI
+  - VistaEstaticaDelante
+  - VistaEstaticaDetras
+  - PosicionRespawn
+  - Plataforma
+  - PlataformaMovil
   layers:
   - Default
   - TransparentFX
@@ -28,11 +36,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Camaras
+  - CarasDado
+  - CosasSaltables
+  - Plataformas
+  - PlataformasMoviles
   - 
   - 
   - 

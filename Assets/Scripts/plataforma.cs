@@ -7,23 +7,84 @@ public class plataforma : MonoBehaviour
     [SerializeField] Vector3 direccion;
     [SerializeField] float velocidad;
     [SerializeField] float contadorSegundos;
+    [SerializeField] float contadorSegundosInicial;
     float contador;
+    Rigidbody rb;
 
 
     private void Start()
     {
         direccion=direccion.normalized;
-        contador = contadorSegundos;
+        contador = contadorSegundosInicial;
+        rb = GetComponent<Rigidbody>();
     }
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
-        contador-=Time.deltaTime;
+        rb.AddForce(direccion.normalized * velocidad, ForceMode.Acceleration);
+        contador -= Time.deltaTime;
         if (contador < 0)
         {
             contador = contadorSegundos;
             direccion = -direccion;
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Dado")
+    //    {
+    //        collision.transform.SetParent(transform);
+    //        Debug.Log("han chocado");
+    //    }
+    //}
+
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Dado")
+    //    {
+    //        collision.transform.SetParent(null);
+    //        Debug.Log("han  dejado de chocado");
+    //    }
+    //}
+
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if (collision.gameObject.tag == "Dado")
+    //    { 
+    //        collision.transform.parent = transform;
+    //        Debug.Log("han triggereado");
+    //    }
+    //}   
+    
+    //private void OnTriggerExit(Collider collision)
+    //{
+    //    if (collision.gameObject.tag == "Dado")
+    //    {
+    //        collision.transform.parent = null;
+    //        Debug.Log("han dejado de triggereado");
+    //    }
+    //}
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Dado"))
+    //        other.transform.parent= transform;
+    //    Debug.Log("han chocado");
+    //} 
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (other.CompareTag("Dado"))
+    //        dado.transform.parent.position = transform.position;
+    //    Debug.Log("han chocado");
+    //}
+
+
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Dado"))
+    //        dado.transform.parent = null;
+    //    Debug.Log("han salido");
+    //}
+
 }
