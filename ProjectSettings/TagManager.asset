@@ -22,13 +22,25 @@ TagManager:
   - VistaTraseraD
   - VistaTraseraI
   - VistaCentro_C
-  - VistaEstaticaD
-  - VistaEstaticaI
-  - VistaEstaticaDelante
-  - VistaEstaticaDetras
   - PosicionRespawn
   - Plataforma
   - PlataformaMovil
+  - Rey
+  - Reina
+  - Alfil
+  - Torre
+  - Peon
+  - Caballo
+  - VistaEstatica1.1
+  - VistaEstatica1.2
+  - VistaEstatica1.3
+  - VistaEstatica1.4
+  - VistaEstatica1.5
+  - VistaEstatica1.1Zoom
+  - VistaEstatica1.2Zoom
+  - VistaEstatica1.3Zoom
+  - VistaEstatica1.4Zoom
+  - VistaImpactoBolon
   layers:
   - Default
   - TransparentFX
@@ -41,7 +53,7 @@ TagManager:
   - CosasSaltables
   - Plataformas
   - PlataformasMoviles
-  - 
+  - Luces
   - 
   - 
   - 

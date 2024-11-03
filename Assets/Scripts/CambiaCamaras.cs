@@ -16,10 +16,16 @@ public class CambiaCamaras : MonoBehaviour
     [SerializeField] private GameObject cenitalTraseraC;
     [SerializeField] private GameObject cenitalTraseraD;
     [SerializeField] private GameObject cenitalTraseraI;
-    [SerializeField] private GameObject estaticaD;
-    [SerializeField] private GameObject estaticaI;
-    [SerializeField] private GameObject estaticaDelante;
-    [SerializeField] private GameObject estaticaDetras;
+    [SerializeField] private GameObject estatica1_1;
+    [SerializeField] private GameObject estatica1_1Zoom;
+    [SerializeField] private GameObject estatica1_2;
+    [SerializeField] private GameObject estatica1_2Zoom;
+    [SerializeField] private GameObject estatica1_3;
+    [SerializeField] private GameObject estatica1_3Zoom;
+    [SerializeField] private GameObject estatica1_4;
+    [SerializeField] private GameObject estatica1_4Zoom;
+    [SerializeField] private GameObject estatica1_5;
+    [SerializeField] private GameObject estatica1Bolon;
     [SerializeField] private GameObject camaraActiva;
   
 
@@ -119,39 +125,88 @@ public class CambiaCamaras : MonoBehaviour
             camaraActiva.SetActive(true);
         } 
         
-        else if (other.CompareTag("VistaEstaticaD"))
+        else if (other.CompareTag("VistaEstatica1.1"))
         {
 
 
             camaraActiva.SetActive(false);
-            camaraActiva = estaticaD;
+            camaraActiva = estatica1_1;
+            camaraActiva.SetActive(true);
+        }     
+        else if (other.CompareTag("VistaEstatica1.1Zoom"))
+        {
+
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1_1;
             camaraActiva.SetActive(true);
         }  
         
-        else if (other.CompareTag("VistaEstaticaI"))
+        else if (other.CompareTag("VistaEstatica1.2"))
         {
      
 
             camaraActiva.SetActive(false);
-            camaraActiva = estaticaI;
+            camaraActiva = estatica1_2;
+            camaraActiva.SetActive(true);
+        }  
+        else if (other.CompareTag("VistaEstatica1.2Zoom"))
+        {
+     
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1_2;
             camaraActiva.SetActive(true);
         } 
         
-        else if (other.CompareTag("VistaEstaticaDelante"))
+        else if (other.CompareTag("VistaEstatica1.3"))
         {
  
 
             camaraActiva.SetActive(false);
-            camaraActiva = estaticaDelante;
+            camaraActiva = estatica1_3;
+            camaraActiva.SetActive(true);
+        } 
+        else if (other.CompareTag("VistaEstatica1.3Zoom"))
+        {
+ 
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1_3;
             camaraActiva.SetActive(true);
         }  
         
-        else if (other.CompareTag("VistaEstaticaDetras"))
+        else if (other.CompareTag("VistaEstatica1.4"))
         {
   
 
             camaraActiva.SetActive(false);
-            camaraActiva = estaticaDetras;
+            camaraActiva = estatica1_4;
+            camaraActiva.SetActive(true);
+        } 
+        else if (other.CompareTag("VistaEstatica1.4Zoom"))
+        {
+  
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1_4;
+            camaraActiva.SetActive(true);
+        }
+         else if (other.CompareTag("VistaEstatica1.5"))
+        {
+  
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1_5;
+            camaraActiva.SetActive(true);
+        }
+        
+        else if (other.CompareTag("VistaImpactoBolon"))
+        {
+  
+
+            camaraActiva.SetActive(false);
+            camaraActiva = estatica1Bolon;
             camaraActiva.SetActive(true);
         }
        

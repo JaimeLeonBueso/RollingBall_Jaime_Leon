@@ -8,8 +8,11 @@ public class plataforma : MonoBehaviour
     [SerializeField] float velocidad;
     [SerializeField] float contadorSegundos;
     [SerializeField] float contadorSegundosInicial;
+    [SerializeField] Vector3 rotacion;
+    [SerializeField] float velocidadRotacion;
+    private Rigidbody rb;
     float contador;
-    Rigidbody rb;
+    
 
 
     private void Start()
@@ -17,6 +20,7 @@ public class plataforma : MonoBehaviour
         direccion=direccion.normalized;
         contador = contadorSegundosInicial;
         rb = GetComponent<Rigidbody>();
+        rb.AddTorque(rotacion * velocidadRotacion, ForceMode.VelocityChange);
     }
 
     void FixedUpdate()

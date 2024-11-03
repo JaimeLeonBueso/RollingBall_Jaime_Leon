@@ -5,23 +5,29 @@ using UnityEngine;
 public class ParedCubos : MonoBehaviour
 {
     private bool iniciarTimer;
-    [SerializeField] private float cuentaAtras;
-    private float contador;
+    [SerializeField] private float establecerCuentaAtras;
+    [SerializeField] private float contador;
     [SerializeField] private Rigidbody[] rbs;
 
     void Start()
     {
-        contador = cuentaAtras;
+        iniciarTimer = false;
+        contador = establecerCuentaAtras;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(iniciarTimer && cuentaAtras > 0)
+        if(iniciarTimer && contador > 0)
         {
             contador -= Time.unscaledDeltaTime;
+            for (int i = 0; i < rbs.Length; i++)
+            {
+                rbs[i].useGravity = false;
+                rbs[i].mass = 0;
+            }
         }
-        else if (iniciarTimer && cuentaAtras<=0)
+        else if (iniciarTimer && contador<=0)
         {
             for (int i=0;i<rbs.Length; i++)
             {
@@ -30,7 +36,7 @@ public class ParedCubos : MonoBehaviour
         }
         else
         {
-            contador = cuentaAtras;
+            contador = establecerCuentaAtras;
             iniciarTimer = false;
         }
     }
