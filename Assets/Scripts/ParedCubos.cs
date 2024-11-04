@@ -33,6 +33,7 @@ public class ParedCubos : MonoBehaviour
             {
                 rbs[i].useGravity = true;
             }
+            Time.timeScale = 1f;
         }
         else
         {

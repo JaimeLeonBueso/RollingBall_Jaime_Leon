@@ -27,7 +27,8 @@ public class CambiaCamaras : MonoBehaviour
     [SerializeField] private GameObject estatica1_5;
     [SerializeField] private GameObject estatica1Bolon;
     [SerializeField] private GameObject camaraActiva;
-  
+
+    public GameObject CamaraActiva { get => camaraActiva; set => camaraActiva = value; }
 
     private void OnTriggerEnter(Collider other)
     {

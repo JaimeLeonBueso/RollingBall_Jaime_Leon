@@ -6,7 +6,7 @@ public class BotonPedestal : MonoBehaviour
 {
     [SerializeField] private GameObject camaraParaBolon;
     [SerializeField] private GameObject camaraParaDespuesBolon;
-    [SerializeField] private GameObject camaraActiva;
+    [SerializeField] private CambiaCamaras camaraActiva;
     [SerializeField] private MovimientoDummy movDummy;
     [SerializeField] private float cuentaAtrasBola;
     [SerializeField] private float cuentaAtrasCamara;
@@ -33,9 +33,10 @@ public class BotonPedestal : MonoBehaviour
         }
         if (contador < 0 && contadorCamara < 0)
         {
-            camaraActiva.SetActive(false);
-            camaraActiva = camaraParaDespuesBolon;
-            camaraActiva.SetActive(true);
+            camaraActiva.CamaraActiva.SetActive(false);
+            camaraActiva.CamaraActiva = camaraParaDespuesBolon;
+            camaraActiva.CamaraActiva.SetActive(true);
+           
         }
     }
 
@@ -43,9 +44,10 @@ public class BotonPedestal : MonoBehaviour
     {
         if (other.CompareTag("Dado"))
         {
-            camaraActiva.SetActive(false);
-            camaraActiva = camaraParaBolon;
-            camaraActiva.SetActive(true);
+
+            camaraActiva.CamaraActiva.SetActive(false);
+            camaraActiva.CamaraActiva = camaraParaBolon;
+            camaraActiva.CamaraActiva.SetActive(true);
             contador = cuentaAtrasBola;
             contadorCamara = cuentaAtrasCamara;
             
