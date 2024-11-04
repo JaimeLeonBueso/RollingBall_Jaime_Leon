@@ -25,6 +25,8 @@ public class ParedCubos : MonoBehaviour
             {
                 rbs[i].useGravity = false;
                 rbs[i].mass = 0;
+                rbs[i].freezeRotation = false;
+
             }
         }
         else if (iniciarTimer && contador<=0)
