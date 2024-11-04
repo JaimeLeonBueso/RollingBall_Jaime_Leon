@@ -32,6 +32,7 @@ public class ParedCubos : MonoBehaviour
             for (int i=0;i<rbs.Length; i++)
             {
                 rbs[i].useGravity = true;
+                rbs[i].mass = 0.1f;
             }
             Time.timeScale = 1f;
         }
