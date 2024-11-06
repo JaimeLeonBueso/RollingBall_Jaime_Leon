@@ -5,11 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/DadoMAldito.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MenuInicio.unity
+    guid: 234f912295492384fa32f726c46896f2
+  - enabled: 1
+    path: Assets/Scenes/RunningBall.unity
+    guid: 4ead66208e4cda244801199fd4bf23d4
+  - enabled: 1
+    path: Assets/Scenes/MenuGameOver.unity
+    guid: fab687f1c481a97458b45bcfe9b38f82
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5261f4b0d41d1e04fab64d1557c139f0,
-      type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
-      guid: 69ab569970473c54cb0e38646d2c1ae2, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5261f4b0d41d1e04fab64d1557c139f0, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 69ab569970473c54cb0e38646d2c1ae2, type: 2}

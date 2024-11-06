@@ -457,7 +457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1\xA1\xA1Tirar el dado!!!"
+  m_text: Probar si tu suerte ha cambiado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d24e6b3ecd1d2b479a31d3d0e7b1f9e, type: 2}
   m_sharedMaterial: {fileID: 21148088844906328, guid: 9d24e6b3ecd1d2b479a31d3d0e7b1f9e, type: 2}
@@ -763,7 +763,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 71.8}
-  m_SizeDelta: {x: 224.61, y: 65.4}
+  m_SizeDelta: {x: 404, y: 75.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813408971
 MonoBehaviour:
@@ -896,7 +896,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 51.1}
+  m_SizeDelta: {x: 291.6, y: 51.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2082161336
 MonoBehaviour:
@@ -1049,9 +1049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Salir del juego
-
-'
+  m_text: Rendirse y salir del juego
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3199409928624324999b9336dd1ed8f3, type: 2}
   m_sharedMaterial: {fileID: 21032597133445202, guid: 3199409928624324999b9336dd1ed8f3, type: 2}
