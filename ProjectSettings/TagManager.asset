@@ -41,6 +41,11 @@ TagManager:
   - VistaEstatica1.3Zoom
   - VistaEstatica1.4Zoom
   - VistaImpactoBolon
+  - VistaEstaticaDelante
+  - VistaEstaticaDetras
+  - VistaEstaticaI
+  - VistaEstaticaD
+  - Viento
   layers:
   - Default
   - TransparentFX
