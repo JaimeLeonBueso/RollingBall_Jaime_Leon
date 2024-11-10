@@ -17,10 +17,14 @@ public class PiezasAjedrez : MonoBehaviour
     [SerializeField] float contadorSegundosInicial2;
     [SerializeField] float contadorSegundosInicialParada1;
     [SerializeField] float contadorSegundosInicialParada2;
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip sonidoAjedrez;
     float contador1;
     float contador2;
     float contador3;
     float contador4;
+    bool sonidoReproducido;
+ 
 
     Rigidbody rb;
 
@@ -35,20 +39,37 @@ public class PiezasAjedrez : MonoBehaviour
         contador4 = contadorSegundosInicialParada2;
         rb = GetComponent<Rigidbody>();
     }
+    void SonidoMovimiento()
+    {
+        if (contador1 > 0 && !sonidoReproducido)
+        {
+            audioManager.ReproducirSonido(sonidoAjedrez);
+            sonidoReproducido = true;
 
+        }
+
+        else if (contador1 < 0 )
+        {
+            sonidoReproducido = false;
+          
+        }
+    }
     void Update()
     {
+        SonidoMovimiento();
         if (gameObject.CompareTag("Caballo"))
         {
-            if (contador1 > 0)
+            if (contador1 > 0 )
             {
                 transform.Translate(direccion1 * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+          
             }
             else if (contador1 < 0 && contador2 > 0)
             {
                 transform.Translate(direccion2 * velocidadDireccion2 * Time.deltaTime, Space.World);
                 contador2 -= Time.deltaTime;
+             
             }
             else if (contador1 < 0 && contador2 < 0 && contador3 > 0)
             {
@@ -63,6 +84,8 @@ public class PiezasAjedrez : MonoBehaviour
                 direccion2 = -direccion2;
             }
 
+            
+
         }
 
         if (gameObject.CompareTag("Alfil"))
@@ -70,8 +93,9 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion1.normalized * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+              
             }
-            else if (contador1 < 0)
+            else if (contador1 < 0 && contador3 > 0)
             {
                 contador3 -= Time.deltaTime;
 
@@ -90,6 +114,7 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion1.normalized * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+           
             }
             else if (contador1 < 0 && contador3 > 0)
             {
@@ -110,6 +135,7 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion1.normalized * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+            
             }
             else if (contador1 < 0 && contador3 > 0)
             {
@@ -130,6 +156,7 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion1 * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+            
             }
 
             else if (contador1 < 0 && contador3 > 0)
@@ -141,6 +168,7 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion2 * velocidadDireccion2 * Time.deltaTime, Space.World);
                 contador2 -= Time.deltaTime;
+         
             }
             else if (contador1 < 0 && contador3 < 0 && contador2 < 0 && contador4 > 0)
             {
@@ -162,6 +190,7 @@ public class PiezasAjedrez : MonoBehaviour
             {
                 transform.Translate(direccion1.normalized * velocidadDireccion1 * Time.deltaTime, Space.World);
                 contador1 -= Time.deltaTime;
+            
             }
             else if (contador1 < 0 && contador3 > 0)
             {
@@ -176,4 +205,6 @@ public class PiezasAjedrez : MonoBehaviour
             }
         }
     }
+
+  
 }

@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class CambiaCamaras : MonoBehaviour
 {
-    [SerializeField] private GameObject frontalC;
-    [SerializeField] private GameObject frontalD;
-    [SerializeField] private GameObject frontalI;
-    [SerializeField] private GameObject traseraC;
-    [SerializeField] private GameObject traseraD;
-    [SerializeField] private GameObject traseraI;
-    [SerializeField] private GameObject cenitalFrontalC;
-    [SerializeField] private GameObject cenitalFrontalD;
-    [SerializeField] private GameObject cenitalFrontalI;
-    [SerializeField] private GameObject cenitalTraseraC;
-    [SerializeField] private GameObject cenitalTraseraD;
-    [SerializeField] private GameObject cenitalTraseraI;
-    [SerializeField] private GameObject estatica1_1;
-    [SerializeField] private GameObject estatica1_1Zoom;
-    [SerializeField] private GameObject estatica1_2;
-    [SerializeField] private GameObject estatica1_2Zoom;
-    [SerializeField] private GameObject estatica1_3;
-    [SerializeField] private GameObject estatica1_3Zoom;
-    [SerializeField] private GameObject estatica1_4;
-    [SerializeField] private GameObject estatica1_4Zoom;
-    [SerializeField] private GameObject estatica1_5;
-    [SerializeField] private GameObject estatica1Bolon;
+    [SerializeField] private GameObject camaraFrontalC;
+    [SerializeField] private GameObject camaraFrontalI;
+    [SerializeField] private GameObject camaraFrontalD;
+    [SerializeField] private GameObject camaraCenitalC;
+    [SerializeField] private GameObject camaraCenitalI;
+    [SerializeField] private GameObject camaraCenitalD;
+    [SerializeField] private GameObject camaraPlataformasI;
+    [SerializeField] private GameObject camaraPlataformasII;
+    [SerializeField] private GameObject camaraPlataformasIII;
+    [SerializeField] private GameObject camaraFinalI;
+    [SerializeField] private GameObject camaraFinalII;
+    [SerializeField] private GameObject camaraBolon;
     [SerializeField] private GameObject camaraActiva;
 
     public GameObject CamaraActiva { get => camaraActiva; set => camaraActiva = value; }
@@ -37,7 +27,7 @@ public class CambiaCamaras : MonoBehaviour
         {
 
             camaraActiva.SetActive(false);
-            camaraActiva = frontalC;
+            camaraActiva = camaraFrontalC;
             camaraActiva.SetActive(true);
         }
 
@@ -45,7 +35,7 @@ public class CambiaCamaras : MonoBehaviour
         {
 
             camaraActiva.SetActive(false);
-            camaraActiva = frontalD;
+            camaraActiva = camaraFrontalD;
             camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaFrontalI"))
@@ -53,163 +43,64 @@ public class CambiaCamaras : MonoBehaviour
 
 
             camaraActiva.SetActive(false);
-            camaraActiva = frontalI;
-            camaraActiva.SetActive(true);
-        }
-        else if (other.CompareTag("VistaTraseraC"))
-        {
-
-
-            camaraActiva.SetActive(false);
-            camaraActiva = traseraC;
-            camaraActiva.SetActive(true);
-        }
-        else if (other.CompareTag("VistaTraseraD"))
-        {
-
-            camaraActiva.SetActive(false);
-            camaraActiva = traseraD;
-            camaraActiva.SetActive(true);
-        }
-        else if (other.CompareTag("VistaTraseraI"))
-        {
-
-            camaraActiva.SetActive(false);
-            camaraActiva = traseraI;
+            camaraActiva = camaraFrontalI;
             camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalFrontalC"))
         {
 
             camaraActiva.SetActive(false);
-            camaraActiva = cenitalFrontalC;
+            camaraActiva = camaraCenitalC;
+            camaraActiva.SetActive(true);
+        }
+        else if (other.CompareTag("VistaCenitalFrontalI"))
+        {
+
+            camaraActiva.SetActive(false);
+            camaraActiva = camaraCenitalI;
             camaraActiva.SetActive(true);
         }
         else if (other.CompareTag("VistaCenitalFrontalD"))
         {
 
+            camaraActiva.SetActive(false);
+            camaraActiva = camaraCenitalD;
+            camaraActiva.SetActive(true);
+        }
+        else if (other.CompareTag("VistaPlataformasI"))
+        {
+
 
             camaraActiva.SetActive(false);
-            camaraActiva = cenitalFrontalD;
+            camaraActiva = camaraPlataformasI;
             camaraActiva.SetActive(true);
         }
 
-        else if (other.CompareTag("VistaCenitalFrontalI"))
+        else if (other.CompareTag("VistaPlataformasII"))
         {
 
 
             camaraActiva.SetActive(false);
-            camaraActiva = cenitalFrontalI;
+            camaraActiva = camaraPlataformasII;
             camaraActiva.SetActive(true);
         }
-        else if (other.CompareTag("VistaCenitalTraseraC"))
+        else if (other.CompareTag("VistaPlataformasIII"))
         {
 
 
             camaraActiva.SetActive(false);
-            camaraActiva = cenitalTraseraC;
+            camaraActiva = camaraPlataformasIII;
             camaraActiva.SetActive(true);
         }
-        else if (other.CompareTag("VistaCenitalTraseraD"))
-        {
-
-            camaraActiva.SetActive(false);
-            camaraActiva = cenitalTraseraD;
-            camaraActiva.SetActive(true);
-        }
-        else if (other.CompareTag("VistaCenitalTraseraI"))
-        {
-
-
-            camaraActiva.SetActive(false);
-            camaraActiva = cenitalTraseraI;
-            camaraActiva.SetActive(true);
-        } 
-        
-        else if (other.CompareTag("VistaEstatica1.1"))
-        {
-
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_1;
-            camaraActiva.SetActive(true);
-        }     
-        else if (other.CompareTag("VistaEstatica1.1Zoom"))
-        {
-
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_1;
-            camaraActiva.SetActive(true);
-        }  
-        
-        else if (other.CompareTag("VistaEstatica1.2"))
-        {
-     
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_2;
-            camaraActiva.SetActive(true);
-        }  
-        else if (other.CompareTag("VistaEstatica1.2Zoom"))
-        {
-     
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_2;
-            camaraActiva.SetActive(true);
-        } 
-        
-        else if (other.CompareTag("VistaEstatica1.3"))
-        {
- 
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_3;
-            camaraActiva.SetActive(true);
-        } 
-        else if (other.CompareTag("VistaEstatica1.3Zoom"))
-        {
- 
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_3;
-            camaraActiva.SetActive(true);
-        }  
-        
-        else if (other.CompareTag("VistaEstatica1.4"))
-        {
-  
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_4;
-            camaraActiva.SetActive(true);
-        } 
-        else if (other.CompareTag("VistaEstatica1.4Zoom"))
-        {
-  
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_4;
-            camaraActiva.SetActive(true);
-        }
-         else if (other.CompareTag("VistaEstatica1.5"))
-        {
-  
-
-            camaraActiva.SetActive(false);
-            camaraActiva = estatica1_5;
-            camaraActiva.SetActive(true);
-        }
-        
+      
         else if (other.CompareTag("VistaImpactoBolon"))
         {
-  
+
 
             camaraActiva.SetActive(false);
-            camaraActiva = estatica1Bolon;
+            camaraActiva = camaraBolon;
             camaraActiva.SetActive(true);
-        }
+        } 
        
     }
 }

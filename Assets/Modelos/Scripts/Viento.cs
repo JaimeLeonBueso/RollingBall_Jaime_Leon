@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Viento : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
+    private Rigidbody rb;
+    [SerializeField] private Rigidbody rbDado;
     [SerializeField] Vector3 direccionViento;
     [SerializeField] float LejaniaFoco;
     [SerializeField] float FuerzaViento;
@@ -20,12 +21,12 @@ public class Viento : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Viento"))
+        if (other.gameObject.CompareTag("Dado"))
         {
         direccionViento = transform.position - other.gameObject.transform.position;
         LejaniaFoco = Vector3.Distance(transform.position, other.gameObject.transform.position);
 
-            rb.AddForce(direccionViento * 0.1f / LejaniaFoco, ForceMode.Impulse);
+            rbDado.AddForce(direccionViento * FuerzaViento   / LejaniaFoco, ForceMode.Impulse);
         }
     }
 }

@@ -9,6 +9,10 @@ public class DadoObstaculo : MonoBehaviour
     [SerializeField] float cuentaAtrasRotacion;
     [SerializeField] float tiempoDeRotacion;
     [SerializeField] float velocidadRotacion;
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioSource audioSource;
+  
+bool sonidoReproducido;
     float contador;
     float contadorTiempoDeRotacion;
     List<Vector3> numbers;
@@ -25,6 +29,7 @@ public class DadoObstaculo : MonoBehaviour
         random = numbers[indiceRandoms];
         contadorTiempoDeRotacion = tiempoDeRotacion;
         contador = cuentaPrimeraRotacion;
+    
     }
     void Update()
     {
@@ -37,6 +42,12 @@ public class DadoObstaculo : MonoBehaviour
             if (contadorTiempoDeRotacion > 0)
             {
                 transform.Rotate(random * velocidadRotacion * Time.deltaTime, Space.Self);
+                if (!sonidoReproducido)
+                {
+                    audioManager.ReproducirAudioSource(audioSource);
+                    sonidoReproducido = true;
+                }
+
 
             }
             else if (contadorTiempoDeRotacion < 0)
@@ -45,6 +56,7 @@ public class DadoObstaculo : MonoBehaviour
                 contadorTiempoDeRotacion = tiempoDeRotacion;
                 indiceRandoms = numeroAleatorio.Next(numbers.Count);
                 random = numbers[indiceRandoms];
+                sonidoReproducido = false;
             }
         }
     }

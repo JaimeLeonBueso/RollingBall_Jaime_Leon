@@ -6,14 +6,10 @@ public class Coleccionable : MonoBehaviour
 {
     [SerializeField] Vector3 rotacion;
     [SerializeField] float velocidadRotacion;
-    [SerializeField] private AudioClip recogerObjeto;
     [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip sonidoColeccionable;
 
-    private void Start()
-    {
-       
-    }
-    // Update is called once per frame
+  
     void Update()
     {
         transform.Rotate(rotacion * velocidadRotacion * Time.deltaTime,  Space.World);
@@ -23,7 +19,7 @@ public class Coleccionable : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Dado"))
         {
-            audioManager.ReproducirSonido(recogerObjeto);
+            audioManager.ReproducirSonido(sonidoColeccionable);
         }
     }
 }

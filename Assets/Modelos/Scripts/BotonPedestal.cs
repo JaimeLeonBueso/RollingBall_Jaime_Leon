@@ -14,6 +14,10 @@ public class BotonPedestal : MonoBehaviour
     [SerializeField] Vector3 direccionDummy;
     [SerializeField] float contador;
     [SerializeField] float contadorCamara;
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip sonidoBoton;
+    [SerializeField] AudioSource audioSource;
+    bool sonidoReproducido;
 
 
 
@@ -30,6 +34,11 @@ public class BotonPedestal : MonoBehaviour
             movDummy.Velocidad = velocidadDummy;
             movDummy.Direccion = direccionDummy;
             contadorCamara -= Time.deltaTime;
+            if (!sonidoReproducido)
+            {
+                audioManager.ReproducirAudioSource(audioSource);
+                sonidoReproducido = true;
+            }
         }
         if (contador < 0 && contadorCamara < 0)
         {
@@ -50,11 +59,13 @@ public class BotonPedestal : MonoBehaviour
             camaraActiva.CamaraActiva.SetActive(true);
             contador = cuentaAtrasBola;
             contadorCamara = cuentaAtrasCamara;
-            
+            audioManager.ReproducirSonido(sonidoBoton);
+
         }
     }
 }
 
 
 
-   
+
+

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
+using UnityEngine.VFX;
 
 public class CartasMoviles: MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class CartasMoviles: MonoBehaviour
     [SerializeField] float contadorSegundosDireccion2;
     [SerializeField] float contadorSegundosParada1;
     [SerializeField] float contadorSegundosParada2;
-   
+    [SerializeField] AudioManager audioManager;
+
     float contador1;
     float contador2;
     float contador3;
@@ -21,7 +23,7 @@ public class CartasMoviles: MonoBehaviour
 
     Rigidbody rb;
 
-
+    
     private void Start()
     {
         direccion1 = direccion1.normalized;
@@ -37,11 +39,12 @@ public class CartasMoviles: MonoBehaviour
     {
             if (contador1 > 0)
             {
-                transform.Translate(direccion1 * velocidadDireccion1 * Time.deltaTime, Space.World);
-                contador1 -= Time.deltaTime;
-            }
+            transform.Translate(direccion1 * velocidadDireccion1 * Time.deltaTime, Space.World);
+            contador1 -= Time.deltaTime;
+          
+        }
 
-            else if (contador1 < 0 && contador3 > 0)
+        else if (contador1 < 0 && contador3 > 0)
             {
                 contador3 -= Time.deltaTime;
             }
@@ -50,7 +53,8 @@ public class CartasMoviles: MonoBehaviour
             {
                 transform.Translate(direccion2 * velocidadDireccion2 * Time.deltaTime, Space.World);
                 contador2 -= Time.deltaTime;
-            }
+          
+        }
             else if (contador1 < 0 && contador3 < 0 && contador2 < 0 && contador4 > 0)
             {
                 contador4 -= Time.deltaTime;

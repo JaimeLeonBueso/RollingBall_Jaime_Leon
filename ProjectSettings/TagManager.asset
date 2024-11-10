@@ -9,19 +9,6 @@ TagManager:
   - Trampa
   - Dado
   - Tirada
-  - VistaFrontalC
-  - VistaCenitalFrontalC
-  - VistaFrontalD
-  - VistaFrontalI
-  - VistaCenitalFrontalD
-  - VistaCenitalFrontalI
-  - VistaCenitalTraseraD
-  - VistaCenitalTraseraI
-  - VistaCenitalTraseraC
-  - VistaTraseraC
-  - VistaTraseraD
-  - VistaTraseraI
-  - VistaCentro_C
   - PosicionRespawn
   - Plataforma
   - PlataformaMovil
@@ -31,21 +18,44 @@ TagManager:
   - Torre
   - Peon
   - Caballo
+  - VistaImpactoBolon
+  - Viento
+  - VistaAjedrezI
+  - VistaAjedrezII
+  - VistaAjedrezIII
+  - VistaMolinoI
+  - VistaMolinoII
+  - VistaSeguimientoPlataformas
+  - VistaPlataformasI
+  - VistaPlataformasII
+  - VistaPlataformasIII
+  - VistaFinalI
+  - VistaFinalII
+  - VistaEstatica1.5
+  - VistaFrontalC
+  - Tirada1
+  - Tirada2
+  - Tirada3
+  - VistaEstatica1.1Zoom
+  - VistaFrontalI
+  - VistaCenitalFrontalC
   - VistaEstatica1.1
+  - VistaTraseraD
+  - VistaEstatica1.3Zoom
+  - VistaFrontalD
+  - VistaCenitalTraseraI
+  - VistaCenitalTraseraC
+  - VistaEstatica1.2Zoom
+  - VistaTraseraC
+  - VistaCenitalTraseraD
+  - VistaCenitalFrontalD
   - VistaEstatica1.2
   - VistaEstatica1.3
-  - VistaEstatica1.4
-  - VistaEstatica1.5
-  - VistaEstatica1.1Zoom
-  - VistaEstatica1.2Zoom
-  - VistaEstatica1.3Zoom
+  - VistaCenitalFrontalI
   - VistaEstatica1.4Zoom
-  - VistaImpactoBolon
-  - VistaEstaticaDelante
-  - VistaEstaticaDetras
-  - VistaEstaticaI
-  - VistaEstaticaD
-  - Viento
+  - VistaEstatica1.4
+  - VistaTraseraI
+  - Completado
   layers:
   - Default
   - TransparentFX
